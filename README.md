@@ -67,7 +67,7 @@ git clone https://github.com/RimjhimD/PORTFOLIO.git
 Open index.html in your browser.
 
 
-Author
+## 👤 Author
 
 Rimjhim Dey
 
