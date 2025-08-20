@@ -55,7 +55,7 @@ Serve as a professional introduction to potential employers or collaborators.
 ## 🎯 How to View
 
 You can view my portfolio online at:
-[**Live Portfolio Link**]()
+[**Live Portfolio Link**](https://rimjhimd.github.io/PORTFOLIO/)
 
 Or, to view locally:
 
