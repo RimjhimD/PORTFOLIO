@@ -1,83 +1,77 @@
-# Rimjhim Dey – Personal Portfolio
+# Rimjhim Dey — Portfolio
 
-## 📌Overview
+Personal portfolio site. Machine learning, applied research, full-stack engineering and automation.
 
-Welcome to my personal portfolio! This website showcases my projects, skills, academic work, and personal achievements. It reflects my learning journey, technical growth, and the work I’ve completed so far. The portfolio is designed to highlight my capabilities as a budding software developer and provide an overview of my experience in web development, programming, and project implementation.
-
----
-
-## 🖥️Features
-
-Project Showcase: Highlights academic and personal projects with descriptions and links.
-
-Skills Section: Lists programming languages, frameworks, and tools I’m proficient in.
-
-Responsive Design: Mobile-friendly and visually appealing layout.
-
-Contact Information: Easy access to email and social media links.
+**Live:** https://rimjhimd.github.io/PORTFOLIO/
 
 ---
 
-## 📂 Folder Structure
+## What's in it
 
-My-Portfolio/
-│
-├── assets/ # Images, icons, and other media files
-├── css/ # Stylesheets
-├── js/ # JavaScript files
-├── index.html # Main landing page
-└── README.md # Project documentation
+- **Hero** — availability status, rotating role line, quick stats (CGPA, semester, repos, graduation).
+- **Focus** — three areas of work: ML pipelines, backends and data layers, automation.
+- **Projects** — filterable grid (ML & Research / Web / Desktop & IoT), each linking to its repo.
+- **Skills** — grouped by domain: languages, ML and data, web and backend, automation, tools, hardware.
+- **Education** — timeline with CGPA and current standing.
+- **Contact** — direct details, coding profiles, and a form that composes a pre-filled email.
 
----
+## Features
 
-## 🚀Technologies Used
+- Dark and light themes, remembered in `localStorage`, defaulting to the OS preference.
+- Scroll progress bar, scroll-spy navigation, reveal-on-scroll animations.
+- Pointer-tracking glow on cards, animated portrait ring, tech marquee.
+- Fully responsive down to 360px, with a full-screen mobile menu.
+- Accessible: skip link, semantic landmarks, visible focus rings, `aria` labels, and a full
+  `prefers-reduced-motion` fallback that disables every animation.
+- Print stylesheet — the page prints as a clean document.
+- Résumé PDF served straight from `assets/`.
 
-Frontend: HTML, CSS, JavaScript
+## Stack
 
-Styling: Modern design principles with responsive layout
+Hand-written HTML, CSS and JavaScript. **No framework, no build step, no dependencies.**
+The only external requests are Google Fonts (Sora, Inter, JetBrains Mono).
+Icons are inline SVG, so there is no icon-font download.
 
-Version Control: Git & GitHub
+```
+index.html          markup, one file
+css/styles.css      design tokens, layout, components, responsive rules
+js/script.js        theme, nav, scroll-spy, reveal, typed roles, filters, form
+assets/Rii.png      portrait
+assets/*.pdf        résumé
+```
 
----
+## Running locally
 
-## 💡Purpose
+Nothing to install. Either open `index.html` directly, or serve the folder:
 
-This portfolio was created to:
-
-Document and showcase my learning journey and achievements.
-
-Practice and improve web development and design skills.
-
-Serve as a professional introduction to potential employers or collaborators.
-
----
-
-## 🎯 How to View
-
-You can view my portfolio online at:
-[**Live Portfolio Link**](https://rimjhimd.github.io/PORTFOLIO/)
-
-Or, to view locally:
-
-Clone the repository:
-
+```bash
 git clone https://github.com/RimjhimD/PORTFOLIO.git
+cd PORTFOLIO
+python3 -m http.server 8000
+# http://localhost:8000
+```
 
+## Customising
 
-Open index.html in your browser.
+All colours, spacing, radii, shadows and fonts are CSS custom properties at the top of
+`css/styles.css` — `:root` for the dark theme, `html[data-theme="light"]` for the light one.
+Changing the accent everywhere is a two-line edit:
 
+```css
+--accent:   #7C5CFF;
+--accent-2: #22D3EE;
+```
 
-## 👤 Author
+Projects are plain `<article class="card project" data-cat="…">` blocks in `index.html`.
+Add one, give it a `data-cat` that matches a filter button, and the filter picks it up with no JS change.
 
-Rimjhim Dey
+## Contact
 
-Email: rimjhimdey91@gmail.com
+- Email — rimjhimdey91@gmail.com
+- GitHub — [@RimjhimD](https://github.com/RimjhimD)
+- LinkedIn — [Rimjhim Dey](https://www.linkedin.com/in/rimjhim-dey-69ba6337b/)
+- Codeforces — [@Peew](https://codeforces.com/profile/Peew) · Toph — [@riiChan](https://toph.co/u/riiChan) · Vjudge — [@Rimjhim](https://vjudge.net/user/Rimjhim)
 
-GitHub: https://github.com/RimjhimD
+## Licence
 
-License
-
-This project is licensed under the MIT License. See LICENSE
- for details.
-
- ✨ Thank you for visiting my portfolio repository!
+MIT — see [LICENSE](LICENSE). Content and images are mine; the code is free to learn from.

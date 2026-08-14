@@ -1,696 +1,643 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rimjhim Dey - Computer Science Portfolio</title>
-    <meta name="description" content="Portfolio of Rimjhim Dey - Computer Science undergraduate passionate about software development, AI/ML, and data-driven solutions.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<title>Rimjhim Dey — Machine Learning &amp; Full-Stack Engineer</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+<meta name="description" content="Rimjhim Dey — final-year Computer Science &amp; Engineering student in Chattogram, Bangladesh. Machine learning pipelines, applied research, REST backends and automation.">
+<meta name="author" content="Rimjhim Dey">
+<meta name="theme-color" content="#07070C">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rimjhim Dey — Machine Learning &amp; Full-Stack Engineer">
+<meta property="og:description" content="ML pipelines, applied research, REST backends and automation. Final-year CSE student, Premier University Chattogram.">
+<meta property="og:image" content="assets/Rii.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%237C5CFF'/><text x='50' y='70' font-size='58' font-family='serif' font-style='italic' font-weight='700' fill='%2307070C' text-anchor='middle'>R</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css?v=3">
+
+<script>
+  /* Flag scripting before first paint so reveal states never flash,
+     and force everything visible if the main script fails to arrive. */
+  document.documentElement.classList.add('js');
+  window.__revealFailsafe = setTimeout(function () { document.documentElement.classList.add('reveal-all'); }, 4000);
+</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <span class="gradient-text">Rimjhim Dey</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ── intro curtain ── -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <span class="loader-name">Rimjhim <em>Dey</em></span>
+    <span class="loader-bar"><i id="loaderBar"></i></span>
+    <span class="loader-num" id="loaderNum">00</span>
+  </div>
+</div>
+
+<!-- ── ambient layers ── -->
+<canvas class="netfx" id="field" aria-hidden="true"></canvas>
+<div class="mesh" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+<!-- ── cursor ── -->
+<div class="cursor-dot"  id="cursorDot"  aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ── side rail ── -->
+<nav class="rail" id="rail" aria-label="Section progress">
+  <a href="#top"       data-rail="top"><span class="rail-dot"></span><span class="rail-label">Intro</span></a>
+  <a href="#work"      data-rail="work"><span class="rail-dot"></span><span class="rail-label">Focus</span></a>
+  <a href="#projects"  data-rail="projects"><span class="rail-dot"></span><span class="rail-label">Projects</span></a>
+  <a href="#skills"    data-rail="skills"><span class="rail-dot"></span><span class="rail-label">Skills</span></a>
+  <a href="#education" data-rail="education"><span class="rail-dot"></span><span class="rail-label">Education</span></a>
+  <a href="#contact"   data-rail="contact"><span class="rail-dot"></span><span class="rail-label">Contact</span></a>
+</nav>
+
+<!-- ══════════════ NAV ══════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand magnetic" href="#top">
+      <span class="brand-mark">R</span>
+      <span class="brand-text">Rimjhim<em>Dey</em></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#work">Focus</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <span class="nav-pill" id="navPill" aria-hidden="true"></span>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section min-vh-100 d-flex align-items-center">
-        <div class="hero-bg"></div>
-        <div class="container position-relative">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-2 order-lg-1">
-                    <div class="hero-content">
-                        <span class="badge badge-gradient mb-3 animate-fade-in">Available for Internship</span>
-                        <h1 class="hero-title animate-slide-up">
-                            Hi, I'm <span class="gradient-text">Rimjhim </span>
-                        </h1>
-                        <p class="hero-subtitle animate-slide-up delay-1">Computer Science Undergraduate</p>
-                        <p class="hero-description animate-slide-up delay-2">
-                            Passionate about software development, AI/ML, and data-driven solutions.
-                            Eager to apply academic knowledge to real-world projects and contribute
-                            to impactful innovations.
-                        </p>
+    <div class="nav-actions">
+      <button class="icon-btn magnetic" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.6 8.6 0 106.4 12.9c1.5 0 2.8-1 3.8-2.7z"/></svg>
+      </button>
+      <a class="btn btn-ghost nav-cv magnetic" href="assets/Rimjhim_Dey_CV.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M12 15l-4.2-4.2M12 15l4.2-4.2M4 19h16"/></svg>
+        Résumé
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-                        <div class="contact-info animate-slide-up delay-3">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="contact-item">
-                                        <i class="fas fa-phone text-primary me-2"></i>
-                                        <span>01630083289</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-item">
-                                        <i class="fas fa-envelope text-primary me-2"></i>
-                                        <span>rimjhimdey91@gmail.com</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-item">
-                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                                        <span>Chattogram, Bangladesh</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-item">
-                                        <i class="fab fa-github text-primary me-2"></i>
-                                        <a href="https://github.com/RimjhimD" class="text-decoration-none">GitHub Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<main id="main">
 
-                        <div class="hero-buttons animate-slide-up delay-4">
-                            <a href="#projects" class="btn btn-gradient btn-lg me-3">
-                                <i class="fas fa-external-link-alt me-2"></i>View Projects
-                            </a>
-                            <a href="#contact" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i>Contact Me
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <div class="hero-image animate-float">
-                        <div class="image-container">
-                            <img src="assets/Rii.png" alt="Rimjhim Dey" class="profile-img">
-                            <div class="image-glow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+
+    <div class="hero-copy">
+      <p class="eyebrow" data-anim="fade">
+        <span class="pulse" aria-hidden="true"></span>
+        Open to internships &amp; research roles — 2026
+      </p>
+
+      <h1 class="hero-title">
+        <span class="hero-line" data-split>Rimjhim</span>
+        <span class="hero-line serif grad" data-split>Dey</span>
+      </h1>
+
+      <p class="hero-role" data-anim="fade">
+        <span class="role-key">I build</span>
+        <span class="typed" id="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <p class="lede" data-anim="fade">
+        Final-year Computer Science &amp; Engineering student in Chattogram. I take machine-learning problems
+        end&#8209;to&#8209;end — preprocessing, class-imbalance handling, benchmarking and tuning — and ship the
+        engineering around them: REST backends, databases and CRM automation.
+      </p>
+
+      <div class="hero-cta" data-anim="fade">
+        <a class="btn btn-primary magnetic" href="#projects">
+          <span>View projects</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost magnetic" href="#contact"><span>Get in touch</span></a>
+        <a class="btn btn-quiet magnetic" href="https://github.com/RimjhimD" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+      <div class="portrait" id="portrait">
+        <div class="portrait-arc" aria-hidden="true"></div>
+        <div class="portrait-arc arc2" aria-hidden="true"></div>
+        <div class="portrait-glow" aria-hidden="true"></div>
+        <img src="assets/Rii.png" alt="Portrait of Rimjhim Dey" width="440" height="440" fetchpriority="high">
+      </div>
+      <div class="chip chip-a" aria-hidden="true"><b>PyTorch</b> · XGBoost</div>
+      <div class="chip chip-b" aria-hidden="true"><b>Spring Boot</b> · MySQL</div>
+      <div class="chip chip-c" aria-hidden="true"><b>Optuna</b> tuned</div>
+    </div>
+
+  </div>
+
+  <a class="scroll-hint" href="#work" aria-label="Scroll to content">
+    <span class="mouse" aria-hidden="true"><i></i></span>
+    <span>Scroll</span>
+  </a>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><i>◆</i><span>PyTorch</span><i>◆</i><span>TensorFlow</span><i>◆</i><span>scikit-learn</span><i>◆</i><span>XGBoost</span><i>◆</i><span>Optuna</span><i>◆</i><span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>FastAPI</span><i>◆</i><span>React</span><i>◆</i><span>MySQL</span><i>◆</i><span>Laravel</span><i>◆</i><span>Kotlin</span><i>◆</i><span>Linux</span><i>◆</i>
+      <span>Python</span><i>◆</i><span>PyTorch</span><i>◆</i><span>TensorFlow</span><i>◆</i><span>scikit-learn</span><i>◆</i><span>XGBoost</span><i>◆</i><span>Optuna</span><i>◆</i><span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>FastAPI</span><i>◆</i><span>React</span><i>◆</i><span>MySQL</span><i>◆</i><span>Laravel</span><i>◆</i><span>Kotlin</span><i>◆</i><span>Linux</span><i>◆</i>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 01 FOCUS ══════════════ -->
+<section id="work" class="section">
+  <span class="sec-num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-kicker" data-anim="fade">Focus</span>
+      <h2 data-split>What I work on</h2>
+    </header>
+
+    <div class="lanes">
+      <article class="card lane tilt" data-anim="rise">
+        <span class="lane-no" aria-hidden="true">01</span>
+        <div class="lane-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 013 3v1.2a3 3 0 011.9 2.6A3 3 0 0119 12a3 3 0 01-2.1 2.9A3 3 0 0115 18v.2a3 3 0 11-6 0V18a3 3 0 01-1.9-3.1A3 3 0 015 12a3 3 0 012.1-2.2A3 3 0 019 7.2V6a3 3 0 013-3z"/></svg>
         </div>
-    </section>
+        <h3>Machine learning pipelines</h3>
+        <p>Feature engineering, resampling for class imbalance, stratified k-fold, and honest benchmarking across
+           gradient boosting and neural networks, with Optuna handling hyperparameter search.</p>
+        <ul class="tags"><li>scikit-learn</li><li>PyTorch</li><li>TensorFlow</li><li>XGBoost</li><li>Optuna</li></ul>
+      </article>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">A comprehensive toolkit built through academic coursework, personal projects, and hands-on experience.</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon programming">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h5 class="skill-title">Programming Languages</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Kotlin</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon web">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h5 class="skill-title">Web Technologies</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">Laravel</span>
-                            <span class="skill-tag">Bootstrap</span>
-                            <span class="skill-tag">React</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon tools">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h5 class="skill-title">Tools & IDEs</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">VS Code</span>
-                            <span class="skill-tag">Android Studio</span>
-                            <span class="skill-tag">XAMPP</span>
-                            <span class="skill-tag">Google Colab</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon database">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h5 class="skill-title">Databases</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon hardware">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <h5 class="skill-title">Hardware & IoT</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">ESP32</span>
-                            <span class="skill-tag">Arduino</span>
-                            <span class="skill-tag">DHT11 Sensors</span>
-                            <span class="skill-tag">Prototyping</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card h-100">
-                        <div class="skill-icon platforms">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h5 class="skill-title">Platforms</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">Windows</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <article class="card lane tilt" data-anim="rise" data-delay="1">
+        <span class="lane-no" aria-hidden="true">02</span>
+        <div class="lane-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5C4 5.6 7.6 4 12 4s8 1.6 8 3.5S16.4 11 12 11 4 9.4 4 7.5z"/><path d="M4 7.5v9C4 18.4 7.6 20 12 20s8-1.6 8-3.5v-9"/><path d="M4 12c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5"/></svg>
         </div>
-    </section>
+        <h3>Backends &amp; data layers</h3>
+        <p>Layered REST APIs covering server-side search, sorting, pagination and authentication over relational
+           schemas, wired to React front-ends and shipped through CI.</p>
+        <ul class="tags"><li>Spring Boot</li><li>FastAPI</li><li>JPA</li><li>MySQL</li><li>GitHub Actions</li></ul>
+      </article>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A showcase of my development journey, featuring web applications, IoT projects, and AI/ML research.</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon healthcare">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <span class="project-type web-app">Web Application</span>
-                        </div>
-                        <h5 class="project-title">CRUDCare – Blood Bank Management System</h5>
-                        <p class="project-description">
-                            Comprehensive blood bank management platform with secure user authentication
-                            and backend data management features.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RimjhimD/CRUDCare-Blood-Bank-Management-System-" class="btn btn-outline-primary btn-sm me-2">
-                                <i class="fab fa-github me-1"></i>GitHub
-                            </a>
-                            <a href="#" class="btn btn-primary btn-sm">
-                                <i class="fas fa-external-link-alt me-1"></i>Visit Website
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon fintech">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <span class="project-type frontend">Frontend Design</span>
-                        </div>
-                        <h5 class="project-title">PayCraft – Digital Payment UI</h5>
-                        <p class="project-description">
-                            Responsive payment form interface with optimized transaction tables.
-                            Achieved 25% improvement in usability scores.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RimjhimD/PayCraft" class="btn btn-outline-primary btn-sm me-2">
-                                <i class="fab fa-github me-1"></i>GitHub
-                            </a>
-                            <a href="#" class="btn btn-primary btn-sm">
-                                <i class="fas fa-external-link-alt me-1"></i>Visit Website
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon iot">
-                                <i class="fas fa-thermometer-half"></i>
-                            </div>
-                            <span class="project-type iot-project">IoT Project</span>
-                        </div>
-                        <h5 class="project-title">ESP32 Web Server with DHT11 Sensor</h5>
-                        <p class="project-description">
-                            IoT project featuring ESP32 microcontroller programmed to capture and
-                            display real-time temperature and humidity data.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Arduino IDE</span>
-                            <span class="tech-tag">ESP32</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RimjhimD/ESP-32-Web-Server-with-DHT11-Sensor" class="btn btn-outline-primary btn-sm">
-                                <i class="fab fa-github me-1"></i>GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon banking">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <span class="project-type desktop">Desktop Application</span>
-                        </div>
-                        <h5 class="project-title">Bank Management System</h5>
-                        <p class="project-description">
-                            Console-based banking application implementing core banking functionalities
-                            including deposits, withdrawals, and account tracking.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RimjhimD/Bank-Management-System" class="btn btn-outline-primary btn-sm">
-                                <i class="fab fa-github me-1"></i>GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon healthcare">
-                                <i class="fas fa-hospital"></i>
-                            </div>
-                            <span class="project-type web-app">Web Application</span>
-                            <span class="badge bg-warning text-dark ms-2">In Progress</span>
-                        </div>
-                        <h5 class="project-title">Hospital Management System</h5>
-                        <p class="project-description">
-                            Currently developing a comprehensive hospital management platform with
-                            appointment scheduling and patient records management.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card h-100">
-                        <div class="project-header">
-                            <div class="project-icon ai">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <span class="project-type ai-ml">AI/ML Research</span>
-                        </div>
-                        <h5 class="project-title">Skin Cancer Type Detection</h5>
-                        <p class="project-description">
-                            AI/ML project utilizing DenseNet, ResNet, and Vision Transformer models
-                            for skin cancer classification using HAM10000 dataset.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AI/ML</span>
-                            <span class="tech-tag">Google Colab</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://drive.google.com/drive/u/0/folders/16Vodjy6n-u8YfI-6qYzmdS6cfYngkvvt" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-external-link-alt me-1"></i>View Drive
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <article class="card lane tilt" data-anim="rise" data-delay="2">
+        <span class="lane-no" aria-hidden="true">03</span>
+        <div class="lane-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
         </div>
-    </section>
+        <h3>Automation</h3>
+        <p>CRM and billing workflows, scheduling pipelines and webhook integrations built outside coursework,
+           replacing manual repetition with scheduled jobs and API calls.</p>
+        <ul class="tags"><li>GoHighLevel</li><li>Webhooks</li><li>REST integrations</li><li>Python</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Education Section -->
-    <section id="education" class="education-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="section-title">Education & Achievements</h2>
-                <p class="section-subtitle">Academic excellence combined with practical learning experiences and continuous skill development.</p>
-            </div>
+<!-- ══════════════ 02 PROJECTS ══════════════ -->
+<section id="projects" class="section alt">
+  <span class="sec-num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-kicker" data-anim="fade">Projects</span>
+      <h2 data-split>Selected work</h2>
+    </header>
 
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="education-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="education-card">
-                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                        <div>
-                                            <h5 class="education-degree">B.Sc. in Computer Science & Engineering</h5>
-                                            <p class="education-institute">Premier University, Chattogram</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <span class="badge bg-primary">Fall 2022 – Present</span>
-                                            <span class="badge bg-success mt-1">Current</span>
-                                        </div>
-                                    </div>
-                                    <p class="education-description">
-                                        Pursuing comprehensive computer science education with focus on software development,
-                                        algorithms, and emerging technologies.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+    <div class="filters" data-anim="fade" role="tablist" aria-label="Filter projects by category">
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All<sup>6</sup></button>
+      <button class="filter" data-filter="ml" role="tab" aria-selected="false">ML &amp; Research<sup>2</sup></button>
+      <button class="filter" data-filter="web" role="tab" aria-selected="false">Web<sup>2</sup></button>
+      <button class="filter" data-filter="devices" role="tab" aria-selected="false">Desktop &amp; IoT<sup>2</sup></button>
+    </div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="education-card">
-                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                        <div>
-                                            <h5 class="education-degree">HSC (Science)</h5>
-                                            <p class="education-institute">Bakalia Government College, Chattogram</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <span class="badge bg-primary">2021</span>
-                                            <span class="badge bg-warning text-dark mt-1">GPA: 5.00</span>
-                                        </div>
-                                    </div>
-                                    <p class="education-description">
-                                        Completed Higher Secondary Certificate with perfect GPA, demonstrating strong
-                                        foundation in mathematics and sciences.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+    <div class="projects" id="projectGrid">
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="education-card">
-                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                        <div>
-                                            <h5 class="education-degree">SSC (Science)</h5>
-                                            <p class="education-institute">Dr. Khastagir Government Girls' High School</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <span class="badge bg-primary">2019</span>
-                                            <span class="badge bg-warning text-dark mt-1">GPA: 5.00</span>
-                                        </div>
-                                    </div>
-                                    <p class="education-description">
-                                        Achieved perfect GPA in Secondary School Certificate, establishing excellent
-                                        academic foundation.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="achievements-card">
-                        <h4 class="mb-4"><i class="fas fa-trophy text-warning me-2"></i>Other Experience & Achievements</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="achievement-item">
-                                    <i class="fas fa-check-circle text-primary me-2"></i>
-                                    Built automatic hand sanitizer dispenser using microcontrollers
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="achievement-item">
-                                    <i class="fas fa-check-circle text-primary me-2"></i>
-                                    Developed sensor-based simulation systems for academic courses
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="achievement-item">
-                                    <i class="fas fa-check-circle text-primary me-2"></i>
-                                    Active participant in competitive programming on Codeforces
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="achievement-item">
-                                    <i class="fas fa-check-circle text-primary me-2"></i>
-                                    Continuous self-learning through online courses and workshops
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <article class="card project tilt" data-cat="ml" data-anim="rise">
+        <div class="p-art art-ml" aria-hidden="true">
+          <span class="p-glyph">CS</span>
+          <span class="p-no">01</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">I'm always excited to discuss new opportunities, collaborate on projects, or simply connect with fellow developers.</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="contact-card h-100">
-                        <h4 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>Contact Information</h4>
-                        <div class="contact-list">
-                            <div class="contact-item-detailed">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <small class="text-muted">Email</small>
-                                    <p class="mb-0"><a href="mailto:rimjhimdey91@gmail.com">rimjhimdey91@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item-detailed">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <small class="text-muted">Phone</small>
-                                    <p class="mb-0"><a href="tel:01630083289">01630083289</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item-detailed">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <small class="text-muted">Location</small>
-                                    <p class="mb-0">Chattogram, Bangladesh</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-link mt-4">
-                            <div class="d-flex align-items-center">
-                                <div class="contact-icon portfolio">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h6 class="mb-1">Portfolio Website</h6>
-                                    <small class="text-muted">For more projects and detailed information</small>
-                                </div>
-                                <a href="" class="btn btn-outline-primary btn-sm" target="_blank">
-                                    <i class="fas fa-external-link-alt me-1"></i>Visit
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="contact-card h-100">
-                        <h4 class="mb-4"><i class="fas fa-code text-primary me-2"></i>Coding Profiles</h4>
-                        <div class="coding-profiles">
-                            <div class="profile-item">
-                                <div class="profile-header">
-                                    <div class="profile-icon github">
-                                        <i class="fab fa-github"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">GitHub</h6>
-                                        <small class="text-muted">@RimjhimD</small>
-                                    </div>
-                                    <a href="https://github.com/RimjhimD" class="btn btn-outline-primary btn-sm" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                                <p class="profile-desc">Open source projects and repositories</p>
-                            </div>
-
-                            <div class="profile-item">
-                                <div class="profile-header">
-                                    <div class="profile-icon codeforces">
-                                        <i class="fas fa-trophy"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">Codeforces</h6>
-                                        <small class="text-muted">@Peew</small>
-                                    </div>
-                                    <a href="https://codeforces.com/profile/Peew" class="btn btn-outline-primary btn-sm" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                                <p class="profile-desc">Competitive programming contests</p>
-                            </div>
-
-                            <div class="profile-item">
-                                <div class="profile-header">
-                                    <div class="profile-icon toph">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">Toph</h6>
-                                        <small class="text-muted">@riiChan</small>
-                                    </div>
-                                    <a href="https://toph.co/u/riiChan" class="btn btn-outline-primary btn-sm" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                                <p class="profile-desc">Programming challenges and contests</p>
-                            </div>
-
-                            <div class="profile-item">
-                                <div class="profile-header">
-                                    <div class="profile-icon vjudge">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">Vjudge</h6>
-                                        <small class="text-muted">@Rimjhim</small>
-                                    </div>
-                                    <a href="https://vjudge.net/user/Rimjhim" class="btn btn-outline-primary btn-sm" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                                <p class="profile-desc">Online judge platform</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind ml">Machine Learning</span>
+            <span class="p-year">2026</span>
+          </div>
+          <h3>Cerebral Stroke Prediction</h3>
+          <p>End-to-end pipeline on clinical data: feature engineering, class-imbalance resampling and stratified
+             k-fold cross-validation. Benchmarked XGBoost against TensorFlow and PyTorch neural networks, with every
+             candidate tuned through Optuna under identical conditions.</p>
+          <ul class="tags"><li>Python</li><li>scikit-learn</li><li>PyTorch</li><li>XGBoost</li><li>Optuna</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://github.com/RimjhimD/Cerebral-Stroke-Prediction-using-Machine-Learning" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span>Repository</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
-    </section>
+      </article>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5">
-        <div class="container">
-            <!-- CTA + About -->
-            <div class="row text-center mb-5">
-                <div class="col-12">
-                    <h2 class="section-title text-white">Ready to Build Your Next Project?</h2>
-                    <p class="lead">Let's work together and turn your ideas into reality!</p>
-                    <p class="small text-muted">I'm Rimjhim Dey, a passionate developer who loves solving problems and building creative digital solutions.</p>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8">
-                    <form class="contact-form" id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">
-                            <i class="fas fa-paper-plane me-2"></i>Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="row justify-content-center mb-4">
-                <div class="col-auto">
-                    <a href="https://www.facebook.com/" target="_blank" class="text-white fs-4 me-4 social-link">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rimjhim-dey-69ba6337b/" target="_blank" class="text-white fs-4 me-4 social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:rimjhimdey91@gmail.com" class="text-white fs-4 me-4 social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/RimjhimD" target="_blank" class="text-white fs-4 social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="border-top border-secondary pt-3 text-center pb-3">
-                <p class="mb-0">&copy; 2025 Rimjhim Dey. All rights reserved.</p>
-            </div>
+      <article class="card project tilt" data-cat="ml" data-anim="rise" data-delay="1">
+        <div class="p-art art-ml2" aria-hidden="true">
+          <span class="p-glyph">SC</span>
+          <span class="p-no">02</span>
         </div>
-    </footer>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind ml">Deep Learning</span>
+            <span class="p-year">2025</span>
+          </div>
+          <h3>Skin Cancer Type Detection</h3>
+          <p>Benchmarked DenseNet, ResNet and a Vision Transformer on the HAM10000 dermatoscopy dataset under a single
+             shared transfer-learning setup, isolating architecture as the only variable.</p>
+          <ul class="tags"><li>Python</li><li>CNNs</li><li>Vision Transformers</li><li>HAM10000</li><li>Colab</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://drive.google.com/drive/u/0/folders/16Vodjy6n-u8YfI-6qYzmdS6cfYngkvvt" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>
+              <span>Notebooks &amp; results</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
+      <article class="card project tilt" data-cat="web" data-anim="rise" data-delay="2">
+        <div class="p-art art-web" aria-hidden="true">
+          <span class="p-glyph">CC</span>
+          <span class="p-no">03</span>
+        </div>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind fs">Full-Stack</span>
+            <span class="p-year">2024</span>
+          </div>
+          <h3>CRUDCare — Blood Bank Management</h3>
+          <p>Donor, stock and request management platform with user authentication, role-based access and full CRUD
+             across every entity.</p>
+          <ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li><li>CSS</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://github.com/RimjhimD/CRUDCare-Blood-Bank-Management-System-" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span>Repository</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project tilt" data-cat="web" data-anim="rise">
+        <div class="p-art art-web2" aria-hidden="true">
+          <span class="p-glyph">PC</span>
+          <span class="p-no">04</span>
+        </div>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind fs">Frontend</span>
+            <span class="p-year">2024</span>
+          </div>
+          <h3>PayCraft — Digital Payment Interface</h3>
+          <p>Responsive payment web app with a validated payment form and a restructured transaction table that
+             stays readable down to phone width.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://github.com/RimjhimD/PayCraft" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span>Repository</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project tilt" data-cat="devices" data-anim="rise" data-delay="1">
+        <div class="p-art art-iot" aria-hidden="true">
+          <span class="p-glyph">32</span>
+          <span class="p-no">05</span>
+        </div>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind sy">IoT</span>
+            <span class="p-year">2024</span>
+          </div>
+          <h3>ESP32 Web Server + DHT11</h3>
+          <p>ESP32 microcontroller serving live temperature and humidity readings over its own web server, with the
+             sensor loop and HTTP handler both written on-device.</p>
+          <ul class="tags"><li>C++</li><li>Arduino IDE</li><li>ESP32</li><li>DHT11</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://github.com/RimjhimD/ESP-32-Web-Server-with-DHT11-Sensor" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span>Repository</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project tilt" data-cat="devices" data-anim="rise" data-delay="2">
+        <div class="p-art art-desk" aria-hidden="true">
+          <span class="p-glyph">BM</span>
+          <span class="p-no">06</span>
+        </div>
+        <div class="p-body">
+          <div class="p-top">
+            <span class="p-kind sy">Desktop</span>
+            <span class="p-year">2023</span>
+          </div>
+          <h3>Bank Management System</h3>
+          <p>Console banking application covering account creation, deposits, withdrawals and transaction history,
+             built around an object-oriented account model with persistent records.</p>
+          <ul class="tags"><li>Java</li><li>OOP</li><li>File I/O</li></ul>
+          <div class="p-links">
+            <a class="link-arrow" href="https://github.com/RimjhimD/Bank-Management-System" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span>Repository</span>
+              <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="grid-empty" id="gridEmpty" hidden>Nothing in that category yet.</p>
+
+    <div class="more-repos" data-anim="fade">
+      <p>Coursework, labs and smaller experiments live on GitHub — semester course repos, algorithms and data
+         structures labs, problem-solving sets and a WSL toolkit.</p>
+      <a class="btn btn-ghost magnetic" href="https://github.com/RimjhimD?tab=repositories" target="_blank" rel="noopener">
+        <span>Browse all repositories</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 03 SKILLS ══════════════ -->
+<section id="skills" class="section">
+  <span class="sec-num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-kicker" data-anim="fade">Toolkit</span>
+      <h2 data-split>Skills</h2>
+    </header>
+
+    <div class="skill-grid">
+      <div class="card skill tilt" data-anim="rise">
+        <h3><span class="sk-dot"></span>Languages</h3>
+        <ul class="tags"><li>Python</li><li>Java</li><li>C</li><li>C++</li><li>Kotlin</li><li>JavaScript</li><li>PHP</li><li>SQL</li></ul>
+      </div>
+      <div class="card skill tilt" data-anim="rise" data-delay="1">
+        <h3><span class="sk-dot c2"></span>ML &amp; Data</h3>
+        <ul class="tags"><li>scikit-learn</li><li>TensorFlow</li><li>PyTorch</li><li>XGBoost</li><li>Optuna</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li></ul>
+      </div>
+      <div class="card skill tilt" data-anim="rise" data-delay="2">
+        <h3><span class="sk-dot c3"></span>Web &amp; Backend</h3>
+        <ul class="tags"><li>Spring Boot</li><li>FastAPI</li><li>Laravel</li><li>React</li><li>REST API design</li><li>HTML/CSS</li><li>Bootstrap</li></ul>
+      </div>
+      <div class="card skill tilt" data-anim="rise">
+        <h3><span class="sk-dot"></span>Automation</h3>
+        <ul class="tags"><li>GoHighLevel CRM</li><li>Webhook integrations</li><li>Scheduling pipelines</li><li>Billing workflows</li></ul>
+      </div>
+      <div class="card skill tilt" data-anim="rise" data-delay="1">
+        <h3><span class="sk-dot c2"></span>Tools &amp; Platforms</h3>
+        <ul class="tags"><li>MySQL</li><li>Git &amp; GitHub</li><li>GitHub Actions</li><li>Google Colab</li><li>Linux</li><li>Android Studio</li><li>VS Code</li></ul>
+      </div>
+      <div class="card skill tilt" data-anim="rise" data-delay="2">
+        <h3><span class="sk-dot c3"></span>Hardware &amp; Networks</h3>
+        <ul class="tags"><li>ESP32</li><li>Arduino</li><li>DHT11 sensors</li><li>Cisco Packet Tracer</li><li>VLAN design</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 04 EDUCATION ══════════════ -->
+<section id="education" class="section alt">
+  <span class="sec-num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-kicker" data-anim="fade">Background</span>
+      <h2 data-split>Education &amp; achievements</h2>
+    </header>
+
+    <div class="edu-layout">
+      <div class="timeline" id="timeline">
+        <span class="t-line" aria-hidden="true"><i id="tLineFill"></i></span>
+        <ol class="t-list">
+
+        <li data-anim="rise">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="card t-card tilt">
+            <div class="t-head">
+              <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+              <span class="t-when now">Fall 2022 — expected mid 2027</span>
+            </div>
+            <p class="t-org">Premier University, Chattogram</p>
+            <p class="t-fact"><b>CGPA 3.62 / 4.00</b> · currently in 8th semester</p>
+          </div>
+        </li>
+        <li data-anim="rise" data-delay="1">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="card t-card tilt">
+            <div class="t-head">
+              <h3>Higher Secondary Certificate — Science</h3>
+              <span class="t-when">2021</span>
+            </div>
+            <p class="t-org">Bakalia Government College, Chattogram</p>
+            <p class="t-fact"><b>GPA 5.00 / 5.00</b></p>
+          </div>
+        </li>
+        <li data-anim="rise" data-delay="2">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="card t-card tilt">
+            <div class="t-head">
+              <h3>Secondary School Certificate — Science</h3>
+              <span class="t-when">2019</span>
+            </div>
+            <p class="t-org">Dr. Khastagir Government Girls' High School, Chattogram</p>
+            <p class="t-fact"><b>GPA 5.00 / 5.00</b></p>
+          </div>
+        </li>
+
+        </ol>
+      </div>
+
+      <aside class="card achievements" data-anim="rise" data-delay="1">
+        <h3>Beyond coursework</h3>
+        <ul>
+          <li>Built CRM, billing and scheduling automations for live business workflows outside university.</li>
+          <li>Designed an automatic hand-sanitiser dispenser around a microcontroller and proximity sensing.</li>
+          <li>Built sensor-based simulation systems for lab courses.</li>
+          <li>Competitive programming on Codeforces, Toph and Vjudge.</li>
+          <li>Continuous self-teaching — React, Spring Boot and MLOps tooling learned outside the syllabus.</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 05 CONTACT ══════════════ -->
+<section id="contact" class="section">
+  <span class="sec-num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-kicker" data-anim="fade">Contact</span>
+      <h2 data-split>Let's talk</h2>
+    </header>
+
+    <div class="contact-layout">
+
+      <div class="contact-side">
+        <div class="card contact-card" data-anim="rise">
+          <h3>Direct</h3>
+          <a class="c-row" href="mailto:rimjhimdey91@gmail.com">
+            <span class="c-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></span>
+            <span><small>Email</small><b>rimjhimdey91@gmail.com</b></span>
+          </a>
+          <a class="c-row" href="tel:+8801630083289">
+            <span class="c-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg></span>
+            <span><small>Phone</small><b>+880 1630 083289</b></span>
+          </a>
+          <div class="c-row static">
+            <span class="c-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span><small>Location</small><b>Chattogram, Bangladesh</b></span>
+          </div>
+        </div>
+
+        <div class="card contact-card" data-anim="rise" data-delay="1">
+          <h3>Profiles</h3>
+          <div class="profiles">
+            <a class="prof" href="https://github.com/RimjhimD" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+              <span><b>GitHub</b><small>@RimjhimD</small></span>
+            </a>
+            <a class="prof" href="https://www.linkedin.com/in/rimjhim-dey-69ba6337b/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.04c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28z"/><path d="M5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13z"/><path d="M7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              <span><b>LinkedIn</b><small>Rimjhim Dey</small></span>
+            </a>
+            <a class="prof" href="https://codeforces.com/profile/Peew" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><rect x="3" y="10" width="4.6" height="10" rx="1.2"/><rect x="9.7" y="4" width="4.6" height="16" rx="1.2"/><rect x="16.4" y="7" width="4.6" height="13" rx="1.2"/></svg>
+              <span><b>Codeforces</b><small>@Peew</small></span>
+            </a>
+            <a class="prof" href="https://toph.co/u/riiChan" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.6 5l-3.2 14"/></svg>
+              <span><b>Toph</b><small>@riiChan</small></span>
+            </a>
+            <a class="prof" href="https://vjudge.net/user/Rimjhim" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5l8 14 8-14"/></svg>
+              <span><b>Vjudge</b><small>@Rimjhim</small></span>
+            </a>
+            <a class="prof" href="assets/Rimjhim_Dey_CV.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M12 15l-4.2-4.2M12 15l4.2-4.2M4 19h16"/></svg>
+              <span><b>Résumé</b><small>PDF download</small></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <form class="card contact-form" id="contactForm" data-anim="fade" data-delay="1" novalidate>
+        <h3>Send a message</h3>
+        <p class="form-note">Opens in your mail app, pre-filled — no server, nothing stored.</p>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" id="cName" name="name" autocomplete="name" required placeholder="Your name">
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="cEmail" name="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+        </div>
+        <label class="field">
+          <span>Subject</span>
+          <input type="text" id="cSubject" name="subject" required placeholder="Internship opportunity">
+        </label>
+        <label class="field">
+          <span>Message</span>
+          <textarea id="cMessage" name="message" rows="5" required placeholder="A line or two about what you're working on."></textarea>
+        </label>
+
+        <button class="btn btn-primary btn-block magnetic" type="submit">
+          <span>Compose email</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6.5 16-2.5-6.5z"/></svg>
+        </button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="wrap footer-cta" data-anim="rise">
+    <h2 class="serif">Let's build something.</h2>
+    <a class="btn btn-primary magnetic" href="mailto:rimjhimdey91@gmail.com">
+      <span>rimjhimdey91@gmail.com</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="wrap footer-inner">
+    <div class="f-brand">
+      <span class="brand-mark">R</span>
+      <div>
+        <b>Rimjhim Dey</b>
+        <small>Machine learning · Applied research · Full-stack</small>
+      </div>
+    </div>
+    <nav class="f-links" aria-label="Footer">
+      <a href="#work">Focus</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="f-social">
+      <a class="magnetic" href="https://github.com/RimjhimD" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 00-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0012 1.8z"/></svg>
+      </a>
+      <a class="magnetic" href="https://www.linkedin.com/in/rimjhim-dey-69ba6337b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.04c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28z"/><path d="M5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13z"/><path d="M7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <a class="magnetic" href="mailto:rimjhimdey91@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap f-bottom">
+    <span>© <span id="year">2026</span> Rimjhim Dey</span>
+    <span>Hand-built — no framework, no build step.</span>
+  </div>
+</footer>
+
+<button class="to-top magnetic" id="toTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/script.js?v=3"></script>
 </body>
 </html>
