@@ -166,10 +166,6 @@ that matches a filter button and the filter picks it up with no JavaScript chang
 <a href="mailto:rimjhimdey91@gmail.com"><img src="https://img.shields.io/badge/Email-rimjhimdey91%40gmail.com-7C5CFF?style=for-the-badge&logo=maildotru&logoColor=white" alt="Email"></a>
 <a href="https://www.linkedin.com/in/rimjhim-dey-69ba6337b/"><img src="https://img.shields.io/badge/LinkedIn-Rimjhim_Dey-0A66C2?style=for-the-badge" alt="LinkedIn"></a>
 <a href="https://github.com/RimjhimD"><img src="https://img.shields.io/badge/GitHub-RimjhimD-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-<br>
-<a href="https://codeforces.com/profile/Peew"><img src="https://img.shields.io/badge/Codeforces-Peew-1F8ACB?style=flat-square&logo=codeforces&logoColor=white" alt="Codeforces"></a>
-<a href="https://toph.co/u/riiChan"><img src="https://img.shields.io/badge/Toph-riiChan-22D3EE?style=flat-square" alt="Toph"></a>
-<a href="https://vjudge.net/user/Rimjhim"><img src="https://img.shields.io/badge/Vjudge-Rimjhim-A58BFF?style=flat-square" alt="Vjudge"></a>
 
 </div>
 
