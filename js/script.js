@@ -439,6 +439,7 @@
     var roles = [
       'machine-learning pipelines',
       'REST backends',
+      'n8n workflow automations',
       'research benchmarks',
       'automation that removes work'
     ];
